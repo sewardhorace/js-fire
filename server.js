@@ -1,4 +1,3 @@
-var React = require('react');
 var app = require('express')();
 var compression = require('compression');
 var routes = require('./config/routes');
@@ -19,6 +18,6 @@ mongoose.connect(url, function (error) {
 app.get('/', routes.index);
 
 var port = process.env.PORT || 3000;
-var server = app.listen($port, function() {
+var server = app.listen(port, function() {
   console.log('listening...');
 });
