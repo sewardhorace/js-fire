@@ -18,7 +18,7 @@ app.use(function(res, req, next) {
 
 app.get('/', routes.index);
 
-var $port = process.env.PORT || 5000;
+var $port = process.env.PORT || 3000;
 var server = app.listen($port, function() {
   console.log('listening...');
 });
