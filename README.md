@@ -17,3 +17,7 @@ Make sure the default mongo directory exists and that you have r+w access...
 
 **Use it**  
 `http://localhost:3000`  
+
+**If you want to deploy to Heroku**  
+`heroku create`    
+`git push heroku master`
