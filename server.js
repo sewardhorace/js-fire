@@ -9,6 +9,7 @@ app.engine('jsx', require('express-react-views').createEngine());
 var routes = require('./config/routes');
 app.get('/', routes.index);
 
-var server = app.listen(3000, function() {
+var $port = process.env.PORT || 5000;
+var server = app.listen($port, function() {
   console.log('listening...');
 });
