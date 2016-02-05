@@ -1,9 +1,9 @@
 var React = require('react');
 var app = require('express')();
 var compression = require('compression');
-var MongoClient = require('mongodb').MongoClient;
 var routes = require('./config/routes');
 var assert = require('assert');
+var mongoose = require('mongoose');
 
 app.use(compression())
 app.set('views', __dirname + '/views');
@@ -11,10 +11,9 @@ app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
 
 var url = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/test';
-MongoClient.connect(url, function(err, db) {
-  assert.equal(null, err);
-  console.log("Connected correctly to server.");
-  db.close();
+mongoose.connect(url, function (error) {
+    if (error) console.error(error);
+    else console.log('mongo connected');
 });
 
 app.get('/', routes.index);
