@@ -6,7 +6,7 @@ Make sure the default mongo directory exists and that you have r+w access...
 `sudo chown -R $(whoami) /data`
 
 **Get the code**  
-`git clone git@github.com:mikekavouras/apt-logger.git`  
+`git clone git@github.com:mikekavouras/js-fire.git`  
 
 **Start your mongo process**  
 `mongod`
